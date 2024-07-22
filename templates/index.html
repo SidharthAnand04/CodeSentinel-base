@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Sentinel Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script>
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Code Sentinel Dashboard</h1>
+        <div class="buttons">
+            <button onclick="scrollToSection('commit-info')">Commit Information</button>
+            <button onclick="scrollToSection('llm-response')">LLM Response</button>
+            <button onclick="scrollToSection('github-repo')">GitHub Repository</button>
+        </div>
+        <div id="commit-info" class="section">
+            <h2>Commit Information</h2>
+            <pre>{{ commit_info }}</pre>
+        </div>
+        <div id="llm-response" class="section">
+            <h2>LLM Response</h2>
+            <pre>{{ llm_response }}</pre>
+        </div>
+        <div id="github-repo" class="section">
+            <h2>GitHub Repository</h2>
+            <a href="https://github.com/SidharthAnand04/CodeSentinel" target="_blank">View on GitHub</a>
+        </div>
+    </div>
+</body>
+</html>

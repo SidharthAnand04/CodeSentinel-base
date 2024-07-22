@@ -1,0 +1,480 @@
+Commit: 04b6e1bed000acb86a009ede4f0362980fcb2755
+Author: SidharthAnand04 <sanand12@illinois.edu>
+Date: 2024-07-22 14:36:53-07:00
+Message: asdafsdqert
+
+Changed files:
+  - codetest.c
+    Contents:
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int* arr;
+    // random comment
+    // another random comment
+    int n = 10;
+    arr = malloc(n * sizeof(int));
+
+    // Intentionally causing a buffer overflow
+    for (int i = 0; i <= n; i++) {
+        arr[i] = i;
+    }
+
+    // Missing NULL check for malloc
+    char* buffer = malloc(256);
+    strcpy(buffer, "This is a test string.");
+
+    // Potential memory leak
+    if (buffer != NULL) {
+        printf("%s\n", buffer);
+    }
+
+    // Unused variable
+    int unused = 5;
+
+    // Forgot to free allocated memory
+    // additional comment
+    return 0;
+}
+
+--------------------------------------------------
+Commit: a68391df7db8b08bd9a692a4898cc28c579ac702
+Author: SidharthAnand04 <sanand12@illinois.edu>
+Date: 2024-07-22 14:33:31-07:00
+Message: asdfas
+
+Changed files:
+  - codetest.c
+    Contents:
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int* arr;
+    // random comment
+    // another random comment
+    int n = 10;
+    arr = malloc(n * sizeof(int));
+
+    // Intentionally causing a buffer overflow
+    for (int i = 0; i <= n; i++) {
+        arr[i] = i;
+    }
+
+    // Missing NULL check for malloc
+    char* buffer = malloc(256);
+    strcpy(buffer, "This is a test string.");
+
+    // Potential memory leak
+    if (buffer != NULL) {
+        printf("%s\n", buffer);
+    }
+
+    // Unused variable
+    int unused = 5;
+
+    // Forgot to free allocated memory
+    // additional comment
+    return 0;
+}
+
+--------------------------------------------------
+Commit: 5aaf20c3d2ab2978ae2e6f61b194b96e1ec5510e
+Author: SidharthAnand04 <sanand12@illinois.edu>
+Date: 2024-07-22 14:16:38-07:00
+Message: update 56
+
+Changed files:
+  - llm_response.md
+    Contents:
+Code Review Report:
+
+### Commit 04b6e1bed000acb86a009ede4f0362980fcb2755 (codetest.c)
+Syntax Issues:
+- [Line 9] Error: In the for loop, `i <= n` instead of `< n` can lead to a buffer overflow. The correct condition should be `i < n` to avoid writing beyond the allocated memory.
+
+Styling Issues:
+- No major styling issues, but consistency in commenting could be improved.
+- No line numbers specified here as formatting task.
+
+Errors and Potential Issues:
+- [Line 9] Buffer Overflow: The program intentionally overflows the buffer, which can lead to undefined behavior and potential security risks.
+- [Line 11] Memory Leak: The `malloc` result is not checked for `NULL`, which can cause issues if `malloc` fails.
+- [Line 13] Unused Variable: `int unused` is not utilized.
+
+Recommendations:
+- Fix the for loop condition to `for (int i = 0; i < n; i++)`.
+- Add a check after `malloc` to handle a possible `NULL` value, e.g., `if (arr = malloc(n * sizeof(int))) { ... }`.
+- Remove or initialize the unused variable `int unused`.
+
+### Commit a68391df7db8b08bd9a692a4898cc28c579ac702 (codetest.c)
+No differences from Commit 04b6e1bed000acb86a009ede4f0362980fcb2755.
+
+### Commit 5aaf20c3d2ab2978ae2e6f61b194b96e1ec5510e (llm_response.md)
+This commit is irrelevant to the code review since it's an unrelated file. Focus on `codetest.c`.
+
+### Commit 7ad6abb4034a2dfe2d144c9ad3a18080588bc7a1
+Merge commit, no code changes.
+
+### Commit 66199d208ab28bff32000ae32bd826eee4402f71 (llm_response
+--------------------------------------------------
+Commit: 7ad6abb4034a2dfe2d144c9ad3a18080588bc7a1
+Author: SidharthAnand04 <sanand12@illinois.edu>
+Date: 2024-07-22 13:59:49-07:00
+Message: Merge branch 'main' of https://github.com/SidharthAnand04/CodeSentinel
+
+Changed files:
+  - llm_response.md
+    Contents:
+Code Review Report:
+
+### Commit 04b6e1bed000acb86a009ede4f0362980fcb2755 (codetest.c)
+Syntax Issues:
+- [Line 9] Error: In the for loop, `i <= n` instead of `< n` can lead to a buffer overflow. The correct condition should be `i < n` to avoid writing beyond the allocated memory.
+
+Styling Issues:
+- No major styling issues, but consistency in commenting could be improved.
+- No line numbers specified here as formatting task.
+
+Errors and Potential Issues:
+- [Line 9] Buffer Overflow: The program intentionally overflows the buffer, which can lead to undefined behavior and potential security risks.
+- [Line 11] Memory Leak: The `malloc` result is not checked for `NULL`, which can cause issues if `malloc` fails.
+- [Line 13] Unused Variable: `int unused` is not utilized.
+
+Recommendations:
+- Fix the for loop condition to `for (int i = 0; i < n; i++)`.
+- Add a check after `malloc` to handle a possible `NULL` value, e.g., `if (arr = malloc(n * sizeof(int))) { ... }`.
+- Remove or initialize the unused variable `int unused`.
+
+### Commit a68391df7db8b08bd9a692a4898cc28c579ac702 (codetest.c)
+No differences from Commit 04b6e1bed000acb86a009ede4f0362980fcb2755.
+
+### Commit 5aaf20c3d2ab2978ae2e6f61b194b96e1ec5510e (llm_response.md)
+This commit is irrelevant to the code review since it's an unrelated file. Focus on `codetest.c`.
+
+### Commit 7ad6abb4034a2dfe2d144c9ad3a18080588bc7a1
+Merge commit, no code changes.
+
+### Commit 66199d208ab28bff32000ae32bd826eee4402f71 (llm_response
+--------------------------------------------------
+Commit: 66199d208ab28bff32000ae32bd826eee4402f71
+Author: SidharthAnand04 <sanand12@illinois.edu>
+Date: 2024-07-22 13:59:41-07:00
+Message: remove
+
+Changed files:
+  - llm_response.txt
+--------------------------------------------------
+Commit: 29f86d2f17627bed3fcd9cb80923524224122714
+Author: SidharthAnand04 <sanand12@illinois.edu>
+Date: 2024-07-22 13:55:46-07:00
+Message: Merge branch 'main' of https://github.com/SidharthAnand04/CodeSentinel
+
+Changed files:
+  - llm_response.md
+    Contents:
+Code Review Report:
+
+### Commit 04b6e1bed000acb86a009ede4f0362980fcb2755 (codetest.c)
+Syntax Issues:
+- [Line 9] Error: In the for loop, `i <= n` instead of `< n` can lead to a buffer overflow. The correct condition should be `i < n` to avoid writing beyond the allocated memory.
+
+Styling Issues:
+- No major styling issues, but consistency in commenting could be improved.
+- No line numbers specified here as formatting task.
+
+Errors and Potential Issues:
+- [Line 9] Buffer Overflow: The program intentionally overflows the buffer, which can lead to undefined behavior and potential security risks.
+- [Line 11] Memory Leak: The `malloc` result is not checked for `NULL`, which can cause issues if `malloc` fails.
+- [Line 13] Unused Variable: `int unused` is not utilized.
+
+Recommendations:
+- Fix the for loop condition to `for (int i = 0; i < n; i++)`.
+- Add a check after `malloc` to handle a possible `NULL` value, e.g., `if (arr = malloc(n * sizeof(int))) { ... }`.
+- Remove or initialize the unused variable `int unused`.
+
+### Commit a68391df7db8b08bd9a692a4898cc28c579ac702 (codetest.c)
+No differences from Commit 04b6e1bed000acb86a009ede4f0362980fcb2755.
+
+### Commit 5aaf20c3d2ab2978ae2e6f61b194b96e1ec5510e (llm_response.md)
+This commit is irrelevant to the code review since it's an unrelated file. Focus on `codetest.c`.
+
+### Commit 7ad6abb4034a2dfe2d144c9ad3a18080588bc7a1
+Merge commit, no code changes.
+
+### Commit 66199d208ab28bff32000ae32bd826eee4402f71 (llm_response
+--------------------------------------------------
+Commit: 7d474c444d59f17679eafb9f01ad809763831e79
+Author: SidharthAnand04 <sanand12@illinois.edu>
+Date: 2024-07-22 13:55:22-07:00
+Message: Merge branch 'main' of https://github.com/SidharthAnand04/CodeSentinel
+
+Changed files:
+  - README.md
+    Contents:
+This is an update
+update 2
+update 3
+  - llm_response.md
+    Contents:
+Code Review Report:
+
+### Commit 04b6e1bed000acb86a009ede4f0362980fcb2755 (codetest.c)
+Syntax Issues:
+- [Line 9] Error: In the for loop, `i <= n` instead of `< n` can lead to a buffer overflow. The correct condition should be `i < n` to avoid writing beyond the allocated memory.
+
+Styling Issues:
+- No major styling issues, but consistency in commenting could be improved.
+- No line numbers specified here as formatting task.
+
+Errors and Potential Issues:
+- [Line 9] Buffer Overflow: The program intentionally overflows the buffer, which can lead to undefined behavior and potential security risks.
+- [Line 11] Memory Leak: The `malloc` result is not checked for `NULL`, which can cause issues if `malloc` fails.
+- [Line 13] Unused Variable: `int unused` is not utilized.
+
+Recommendations:
+- Fix the for loop condition to `for (int i = 0; i < n; i++)`.
+- Add a check after `malloc` to handle a possible `NULL` value, e.g., `if (arr = malloc(n * sizeof(int))) { ... }`.
+- Remove or initialize the unused variable `int unused`.
+
+### Commit a68391df7db8b08bd9a692a4898cc28c579ac702 (codetest.c)
+No differences from Commit 04b6e1bed000acb86a009ede4f0362980fcb2755.
+
+### Commit 5aaf20c3d2ab2978ae2e6f61b194b96e1ec5510e (llm_response.md)
+This commit is irrelevant to the code review since it's an unrelated file. Focus on `codetest.c`.
+
+### Commit 7ad6abb4034a2dfe2d144c9ad3a18080588bc7a1
+Merge commit, no code changes.
+
+### Commit 66199d208ab28bff32000ae32bd826eee4402f71 (llm_response
+--------------------------------------------------
+Commit: 1621ef2fe8ff68beeda4b7efa7c2c108428e1489
+Author: SidharthAnand04 <sanand12@illinois.edu>
+Date: 2024-07-22 13:55:08-07:00
+Message: test
+
+Changed files:
+  - codetest.c
+    Contents:
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int* arr;
+    // random comment
+    // another random comment
+    int n = 10;
+    arr = malloc(n * sizeof(int));
+
+    // Intentionally causing a buffer overflow
+    for (int i = 0; i <= n; i++) {
+        arr[i] = i;
+    }
+
+    // Missing NULL check for malloc
+    char* buffer = malloc(256);
+    strcpy(buffer, "This is a test string.");
+
+    // Potential memory leak
+    if (buffer != NULL) {
+        printf("%s\n", buffer);
+    }
+
+    // Unused variable
+    int unused = 5;
+
+    // Forgot to free allocated memory
+    // additional comment
+    return 0;
+}
+
+--------------------------------------------------
+Commit: a7450d33c16cc65284612f8f5924113c5bc539b9
+Author: SidharthAnand04 <sanand12@illinois.edu>
+Date: 2024-07-22 13:51:06-07:00
+Message: push
+
+Changed files:
+  - README.md
+    Contents:
+This is an update
+update 2
+update 3
+--------------------------------------------------
+Commit: ace7d82f1bfcbdba4cca3e224c62c480ee7f7f7f
+Author: SidharthAnand04 <sanand12@illinois.edu>
+Date: 2024-07-22 13:49:59-07:00
+Message: Merge branch 'main' of https://github.com/SidharthAnand04/CodeSentinel
+
+Changed files:
+  - llm_response.md
+    Contents:
+Code Review Report:
+
+### Commit 04b6e1bed000acb86a009ede4f0362980fcb2755 (codetest.c)
+Syntax Issues:
+- [Line 9] Error: In the for loop, `i <= n` instead of `< n` can lead to a buffer overflow. The correct condition should be `i < n` to avoid writing beyond the allocated memory.
+
+Styling Issues:
+- No major styling issues, but consistency in commenting could be improved.
+- No line numbers specified here as formatting task.
+
+Errors and Potential Issues:
+- [Line 9] Buffer Overflow: The program intentionally overflows the buffer, which can lead to undefined behavior and potential security risks.
+- [Line 11] Memory Leak: The `malloc` result is not checked for `NULL`, which can cause issues if `malloc` fails.
+- [Line 13] Unused Variable: `int unused` is not utilized.
+
+Recommendations:
+- Fix the for loop condition to `for (int i = 0; i < n; i++)`.
+- Add a check after `malloc` to handle a possible `NULL` value, e.g., `if (arr = malloc(n * sizeof(int))) { ... }`.
+- Remove or initialize the unused variable `int unused`.
+
+### Commit a68391df7db8b08bd9a692a4898cc28c579ac702 (codetest.c)
+No differences from Commit 04b6e1bed000acb86a009ede4f0362980fcb2755.
+
+### Commit 5aaf20c3d2ab2978ae2e6f61b194b96e1ec5510e (llm_response.md)
+This commit is irrelevant to the code review since it's an unrelated file. Focus on `codetest.c`.
+
+### Commit 7ad6abb4034a2dfe2d144c9ad3a18080588bc7a1
+Merge commit, no code changes.
+
+### Commit 66199d208ab28bff32000ae32bd826eee4402f71 (llm_response
+--------------------------------------------------
+Commit: 29d5827976ba35cd483ae491a6b0c932531e992a
+Author: SidharthAnand04 <sanand12@illinois.edu>
+Date: 2024-07-22 13:49:49-07:00
+Message: Co-authored-by: TING-Dbug <TING-Dbug@users.noreply.github.com>
+Co-authored-by: SayLesQi <SayLesQi@users.noreply.github.com>
+
+Changed files:
+  - README.md
+    Contents:
+This is an update
+update 2
+update 3
+  - codetest.c
+    Contents:
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int* arr;
+    // random comment
+    // another random comment
+    int n = 10;
+    arr = malloc(n * sizeof(int));
+
+    // Intentionally causing a buffer overflow
+    for (int i = 0; i <= n; i++) {
+        arr[i] = i;
+    }
+
+    // Missing NULL check for malloc
+    char* buffer = malloc(256);
+    strcpy(buffer, "This is a test string.");
+
+    // Potential memory leak
+    if (buffer != NULL) {
+        printf("%s\n", buffer);
+    }
+
+    // Unused variable
+    int unused = 5;
+
+    // Forgot to free allocated memory
+    // additional comment
+    return 0;
+}
+
+  - llm_response.txt
+--------------------------------------------------
+Commit: a8b2ba4fdbbd346813cd37dd5cb62bbbb8d4d705
+Author: SidharthAnand04 <sanand12@illinois.edu>
+Date: 2024-07-22 13:48:09-07:00
+Message: update 3
+
+Changed files:
+  - README.md
+    Contents:
+This is an update
+update 2
+update 3
+--------------------------------------------------
+Commit: 843f21fb607ded53475cfe18bf19e64e06ef636b
+Author: SidharthAnand04 <sanand12@illinois.edu>
+Date: 2024-07-22 12:43:23-07:00
+Message: Add code
+
+Changed files:
+  - codetest.c
+    Contents:
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int* arr;
+    // random comment
+    // another random comment
+    int n = 10;
+    arr = malloc(n * sizeof(int));
+
+    // Intentionally causing a buffer overflow
+    for (int i = 0; i <= n; i++) {
+        arr[i] = i;
+    }
+
+    // Missing NULL check for malloc
+    char* buffer = malloc(256);
+    strcpy(buffer, "This is a test string.");
+
+    // Potential memory leak
+    if (buffer != NULL) {
+        printf("%s\n", buffer);
+    }
+
+    // Unused variable
+    int unused = 5;
+
+    // Forgot to free allocated memory
+    // additional comment
+    return 0;
+}
+
+--------------------------------------------------
+Commit: 9c5002febf85dc6d4b24e64e47eb399afe7eb0ea
+Author: SidharthAnand04 <sanand12@illinois.edu>
+Date: 2024-07-22 11:55:41-07:00
+Message: update 2
+
+Changed files:
+  - README.md
+    Contents:
+This is an update
+update 2
+update 3
+--------------------------------------------------
+Commit: da0c0c68729702f8eccac5c2b16d47c292823132
+Author: SidharthAnand04 <sanand12@illinois.edu>
+Date: 2024-07-22 11:51:13-07:00
+Message: update
+
+Changed files:
+  - README.md
+    Contents:
+This is an update
+update 2
+update 3
+--------------------------------------------------
+Commit: 46554151160899a9f8f5a638b8a920755656d367
+Author: SidharthAnand04 <sanand12@illinois.edu>
+Date: 2024-07-22 11:35:40-07:00
+Message: initial commit
+
+Changed files:
+  - README.md
+    Contents:
+This is an update
+update 2
+update 3
+--------------------------------------------------
