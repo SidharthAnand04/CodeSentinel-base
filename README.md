@@ -2,6 +2,8 @@
 
 CodeSentinel is a dynamic server application designed to monitor changes in a specified GitHub repository, feed those changes into a Language Learning Model (LLM), generate a bug log based on the commits, and then commit this log back to the repository. The application also includes a web dashboard built with Flask to display commit information, LLM responses, and an embedded view of the GitHub repository.
 
+[Demonstration Repo](https://github.com/SidharthAnand04/CodeSentinel/tree/main)
+
 ## Features
 
 - **Automatic Repository Monitoring**: Periodically checks the specified GitHub repository for new commits.
